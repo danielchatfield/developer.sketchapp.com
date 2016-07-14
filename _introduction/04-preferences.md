@@ -61,11 +61,3 @@ Once you do that, you can tell your Plugin to call a method for every action by 
   }
 }
 ```
-
-## Change the location of the Sketch API
-
-If set, the path defined in `SketchAPILocation` is used instead of the one in the application bundle. This is handy when working on the API itself, as it allows you to edit the one in the [source repo](https://github.com/BohemianCoding/SketchAPI) and have it loaded in Sketch without rebuilding.
-
-```shell
-defaults write ~/Library/Preferences/com.bohemiancoding.sketch3.plist SketchAPILocation "/path/to/SketchAPI.js"
-```
