@@ -65,3 +65,14 @@ Once you do that, you can tell your Plugin to call a method for every action by 
   }
 }
 ```
+
+## Always reload scripts before running
+
+For performance reasons, Sketch caches the contents of the Plugins folder. This is very convenient for users, since Plugins run very fast, but makes your life hard if you’re a developer. That’s why we added a preference to disable this caching mechanism and force Sketch to always reload a Plugin’s code from disk:
+
+
+```shell
+defaults write ~/Library/Preferences/com.bohemiancoding.sketch3.plist AlwaysReloadScript -bool YES
+```
+
+If you enable this, as soon as you save your script it will be ready for testing in Sketch (bye bye relaunching it just to test a small change!)
