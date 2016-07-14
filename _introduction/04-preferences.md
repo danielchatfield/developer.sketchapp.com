@@ -44,6 +44,10 @@ defaults write ~/Library/Preferences/com.bohemiancoding.sketch3.plist scriptEdit
 
 ## Listen to all actions in the Action API
 
+<p class="warning">
+  <strong>Warning:</strong> This is an extremely expensive operation, and will impact Sketch’s performance. Please use this <em>on your development system only</em> and <strong>never enable this on a customer’s computer</strong>.
+</p>
+
 When working with the new [Action API](/reference/action/) you'll probably want to listen to multiple events (specially when trying to find *which* event is the one you want to use).
 
 To do that, use the `actionWildcardsAllowed` preference. If set to YES, scripts are allowed to register a wildcard handler for events. This is off by default, and it could have a bad effect on performance, so handle it with care.
