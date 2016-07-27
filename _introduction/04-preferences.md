@@ -76,3 +76,7 @@ defaults write ~/Library/Preferences/com.bohemiancoding.sketch3.plist AlwaysRelo
 ```
 
 If you enable this, as soon as you save your script it will be ready for testing in Sketch (bye bye relaunching it just to test a small change!)
+
+Please note that this setting determines whether the source of the script is reloaded from disc whenever Sketch makes a new javascript context for the script. If it’s `NO`, the source is cached, if it’s `YES`, the source is always reloaded from disc.
+
+What it doesn’t do, however, is change when a new JavaScript context is made. For long-running scripts, the same context is held in memory (it has to be — the running script is using it) until the script exits. So if you’re testing a long-running script, you will still have to find a way to stop the script, so that the context gets thrown away (that usually means relaunching Sketch, or setting `coscript.setShouldKeepAround(false)`).
